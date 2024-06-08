@@ -1,0 +1,130 @@
+body {
+  position: relative;
+}
+
+.photo-gallery {
+  column-count: 5;
+  column-gap: 0.5em;
+  width: 100%; 
+}
+
+.gallery-item {
+  position: relative;
+  break-inside: avoid;
+  margin-bottom: 0.5em;
+  outline: 2px solid #fff;
+  outline-offset: -10px;
+  overflow: hidden; 
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto; 
+  background: rgba(22, 22, 22, 0.1);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transition: height 0.5s ease-out;
+  text-align: left;
+  padding: 25px;
+  box-sizing: border-box;
+  opacity: 0;
+}
+
+.description-content {
+  width: 100%;
+  text-align: left;
+  color: #fff;
+  margin-bottom: -28px; 
+}
+
+
+.gallery-item:hover .description {
+  height: 100%;
+  opacity: 1;
+}
+
+
+
+.container-input {
+  position: fixed;
+  top: 1.5%; 
+  right: 46%; 
+  z-index: 1000;
+}
+
+.input {
+  width: 150px;
+  padding: 10px 0px 10px 40px;
+  border-radius: 9999px;
+  border: solid 1px #333;
+  transition: all .2s ease-in-out;
+  outline: none;
+  opacity: 0.8;
+  font-family: "DancingScript", cursive;
+}
+
+.container-input svg {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0, -50%);
+}
+
+.input:focus {
+  opacity: 1;
+  width: 250px;
+}
+ 
+
+.edit-button {
+  position: absolute;
+  bottom: 7px; 
+  right: 10px;
+  background-color: transparent; 
+  color: #ffffff;
+  border: none; 
+  cursor: pointer; 
+  padding: 5px; 
+  transition: transform 0.3s; 
+}
+
+.edit-button i { 
+  font-size: 16px; 
+}
+
+.edit-button:hover i { 
+  transform: scale(1.2); 
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

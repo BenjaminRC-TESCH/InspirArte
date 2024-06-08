@@ -1,0 +1,32 @@
+<div class="photo-gallery">
+  <div *ngFor="let photo of getCurrentPagePhotos()" class="gallery-item" (mouseenter)="showDescription = true" (mouseleave)="showDescription = false">
+    <img [src]="'http://localhost:4000/' + photo.imagePath" alt="Foto">
+    <div class="description" *ngIf="showDescription">
+      <div class="description-content">
+        <p>{{photo.title}}</p>
+        <button class="edit-button" (click)="selectedCard(photo._id)">
+          <i class="fas fa-eye"></i>
+        </button>
+      </div>  
+      <label class="ui-like" (click)="onReact(photo._id)">
+        <input type="checkbox">
+        <div class="like">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill=""><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"><path d="M20.808,11.079C19.829,16.132,12,20.5,12,20.5s-7.829-4.368-8.808-9.421C2.227,6.1,5.066,3.5,8,3.5a4.444,4.444,0,0,1,4,2,4.444,4.444,0,0,1,4-2C18.934,3.5,21.773,6.1,20.808,11.079Z"></path></g></svg>
+           </div>
+           
+      </label>  
+      //Modificar para las reacciones
+      <div class="reactions-count">{{photo.reactions}}</div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="pagination-container">
+  <div class="pagination">
+    <button *ngFor="let pageNumber of getPageNumbers()" (click)="onPageChange(pageNumber)" [class.active]="pageNumber === currentPage" class="page-number">
+      {{ pageNumber }}
+    </button>
+  </div>
+</div>
